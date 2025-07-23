@@ -1,0 +1,43 @@
+# Ignore core and contrib files handled by Composer
+/core/
+/vendor/
+/modules/contrib/
+/themes/contrib/
+/profiles/contrib/
+/libraries/
+
+# Ignore site-specific generated files
+/sites/*/files/
+/sites/*/private/
+/sites/*/settings*.php
+/sites/*/services*.yml
+
+# Ignore Drupal config sync if stored elsewhere
+/config/sync/*
+
+# IDE and system files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*.orig
+*.save
+
+# OS-specific
+ehthumbs.db
+desktop.ini
+
+# Node/NPM (if using frontend build tools like Gulp, Webpack)
+node_modules/
+dist/
+build/
+
+.ddev
