@@ -42,7 +42,7 @@
  * - page.highlighted: Items for the highlighted region.
  * - page.primary_menu: Items for the primary menu region.
  * - page.secondary_menu: Items for the secondary menu region.
- * - page.hero: Items for the hero region.
+ * - page.about: Items for the about region.
  * - page.featured_top: Items for the featured top region.
  * - page.content: The main content of the current page.
  * - page.sidebar_first: Items for the first sidebar.
@@ -106,12 +106,19 @@
           </div>
         {% endif %}
 
-        {# Search form aligned right #}
-        {% if page.header_form %}
-          <div class="search-wrapper ms-3 d-flex align-items-center">
-            {{ page.header_form }}
-          </div>
-        {% endif %}
+        <div class="search-socials d-flex align-items-center ms-3">
+          {% if page.top_header %}
+            <div class="social-wrapper me-3 d-flex align-items-center">
+              {{ page.top_header }}
+            </div>
+          {% endif %}
+
+          {% if page.header_form %}
+            <div class="search-wrapper d-flex align-items-center">
+              {{ page.header_form }}
+            </div>
+          {% endif %}
+        </div>
 
         {# Toggle button for collapsed menu (mobile) #}
         {% if page.primary_menu or page.header_form %}
@@ -140,6 +147,14 @@
   {% if page.hero %}
     <section class="hero-section">
       {{ page.hero }}
+    </section>
+  {% endif %}
+{% endblock %}
+
+{% block about %}
+  {% if page.about %}
+    <section class="about-section">
+      {{ page.about }}
     </section>
   {% endif %}
 {% endblock %}

@@ -26,6 +26,7 @@ regions:
   page_bottom: 'Page bottom'
   highlighted: Highlighted
   featured_top: 'Featured top'
+  about: 'About block'
   breadcrumb: Breadcrumb
   content: Content
   sidebar_first: 'Sidebar first'

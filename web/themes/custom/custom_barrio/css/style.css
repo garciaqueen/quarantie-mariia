@@ -21,7 +21,10 @@ body {
     top: 70px;
     left: 50%;
     transform: translateX(-50%);
-    width: 1000px;
+    width: 1020px;
+  }
+  .main-content {
+    padding-top: 150px;
   }
 }
 
@@ -43,22 +46,29 @@ body {
 .navbar.custom-main-nav > .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
   flex-wrap: nowrap;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0px !important;
 }
 
 .site-branding {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: column; /* 🔄 Change from column to row */
   align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: rgb(51, 45, 51);
+  color: #ffffff;
+  flex-shrink: 0;
 }
 
+header #search-block-form {
+  flex-flow: row wrap;
+}
 .navbar-brand {
   font-size: 30px;
   padding: 0px;
@@ -66,9 +76,15 @@ body {
 
 .menu-wrapper {
   flex-grow: 1;
+  min-width: 200px;
   display: flex;
   justify-content: center;
 }
+
+.search-socials {
+  flex-shrink: 0;
+}
+
 
 .home-icon,
 .search-wrapper {
@@ -76,10 +92,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.search-block-form {
-  padding: 0px;
 }
 
 /* ==== HERO SECTION ==== */
@@ -91,11 +103,13 @@ body {
 }
 
 .views_slideshow_cycle_teaser_section {
+  width: 100vw !important;
+  max-width: none !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  position: relative !important;
+  overflow: hidden !important;
   aspect-ratio: 1920 / 700;
-  width: 100% !important;
-  max-width: 1920px;
-  height: auto;
-  overflow: hidden;
 }
 
 .skin-default {
@@ -127,6 +141,9 @@ body {
   overflow: hidden; /* prevent overflow */
 }
 
+.section {
+  text-align: start !important;
+}
 
 
 .hero-section img {
@@ -246,3 +263,4 @@ body {
     margin-top: 0;
   }
 }
+
