@@ -8,6 +8,12 @@ base theme: bootstrap_barrio
 libraries:
   - custom_barrio/bootstrap_cdn
   - custom_barrio/global-styling
+  - custom_barrio/jquery_fix
+
+libraries-override:
+  core/jquery:
+    js:
+      assets/vendor/jquery/jquery.min.js: https://code.jquery.com/jquery-3.6.0.min.js
 
 regions:
   top_header: 'Top header'

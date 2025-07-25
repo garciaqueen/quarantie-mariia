@@ -2,3 +2,247 @@
  * @file
  * Subtheme specific CSS.
  */
+
+/* === Загальні стилі для сторінки === */
+body {
+  padding-top: 0px;
+}
+
+/* ==== HEADER & NAVBAR STYLING ==== */
+
+.custom-header {
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1000px) {
+  .custom-header {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+  }
+}
+
+@media (max-width: 999px) {
+  .custom-header {
+    width: 100%;
+    position: relative;
+    transform: none;
+    left: auto;
+  }
+}
+
+.navbar.custom-main-nav {
+  padding: 0px;
+  background-color: #ffffff !important;
+}
+
+
+.navbar.custom-main-nav > .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  padding: 0px;
+}
+
+.menu-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.home-icon,
+.search-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-block-form {
+  padding: 0px;
+}
+
+/* ==== HERO SECTION ==== */
+
+.hero-section {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+}
+
+.views_slideshow_cycle_teaser_section {
+  aspect-ratio: 1920 / 700;
+  width: 100% !important;
+  max-width: 1920px;
+  height: auto;
+  overflow: hidden;
+}
+
+.skin-default {
+  padding: 0 !important;
+}
+
+.views_slideshow_cycle_teaser_section img {
+  width: 100%;
+  height: 100%;  /* Fill height of container */
+  object-fit: cover; /* Crop or fill nicely */
+  display: block;
+}
+
+
+.views_slideshow_cycle_slide {
+  width: 100% !important;
+  max-width: 1920px;
+  overflow: hidden;
+  left: 0 !important; /* Reset left for layout unless animation needs */
+  position: absolute;
+  top: 0;
+}
+
+
+.featured-top__inner {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden; /* prevent overflow */
+}
+
+
+
+.hero-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-block {
+  position: relative;
+  height: 700px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 3rem 2rem;
+  margin-top: 120px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==== REGIONS ==== */
+
+.region-featured-top {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.region-featured-top .block,
+.region-featured-top .block-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+/* ==== GRID FIX ==== */
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* ==== RESPONSIVE HERO ==== */
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hero-content {
+    padding: 2rem 1rem;
+    margin-top: 0;
+  }
+
+  .hero-block {
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem 1rem;
+    margin-top: 0;
+  }
+}
