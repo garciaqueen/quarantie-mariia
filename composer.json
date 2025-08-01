@@ -27,6 +27,7 @@
         "drupal/devel": "^5.0@dev",
         "drupal/flag": "^4.0@dev",
         "drupal/like": "^3.0@dev",
+        "drupal/masquerade": "^2.0",
         "drupal/social_media_links": "^2.0@dev",
         "drupal/views_slideshow": "^5.0@dev",
         "drush/drush": "^13.6"

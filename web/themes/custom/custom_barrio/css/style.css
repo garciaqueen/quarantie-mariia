@@ -6,6 +6,8 @@
 /* === Загальні стилі для сторінки === */
 body {
   padding-top: 0px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ==== HEADER & NAVBAR STYLING ==== */
@@ -15,15 +17,62 @@ body {
   z-index: 10;
 }
 
+#main-wrapper .container-custom {
+  max-width: 1220px;
+  padding-left: 20px !important; 
+  padding-right: 20px !important;
+  display: flex;
+  justify-self: center;
+}
+.site-footer .container-custom {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* .footer-branding,
+.footer-socials {
+  display: flex;
+  align-items: center;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+.footer-socials a {
+  display: inline-flex;
+}
+
+.footer-socials img {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+ */
+
+.navbar-collapse .container-custom {
+    gap: 29px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 @media (min-width: 1000px) {
   .custom-header {
     position: absolute;
     top: 70px;
     left: 50%;
     transform: translateX(-50%);
-    width: 1020px;
+    width: 1220px;
+    max-width: 100%;
   }
-  .main-content {
+  
+  body:not(.path-frontpage) #main {
     padding-top: 150px;
   }
 }
@@ -36,28 +85,23 @@ body {
     left: auto;
   }
 }
+.contextual-region .content {
+  gap: 10px;
+}
 
 .navbar.custom-main-nav {
   padding: 0px;
   background-color: #ffffff !important;
 }
 
-
-.navbar.custom-main-nav > .container {
+.navbar.custom-main-nav > .container-custom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: nowrap;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0px !important;
 }
 
 .site-branding {
   display: flex;
-  flex-direction: column; /* 🔄 Change from column to row */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 10px;
@@ -66,12 +110,10 @@ body {
   flex-shrink: 0;
 }
 
-header #search-block-form {
-  flex-flow: row wrap;
-}
 .navbar-brand {
   font-size: 30px;
   padding: 0px;
+  color: rgb(71, 165, 209);
 }
 
 .menu-wrapper {
@@ -80,18 +122,167 @@ header #search-block-form {
   display: flex;
   justify-content: center;
 }
+.nav-link {
+  color: black;
+  padding: 6px;
 
+}
+/* FIX: Make search-socials container horizontal */
 .search-socials {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
+/* Custom social media region styling */
+.social-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-.home-icon,
+.social-wrapper .block {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.social-wrapper .field--name-body {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin: 0 !important;
+}
+
+.social-wrapper .field--name-body a {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+
+/* Search wrapper styling */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper .block {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.home-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FIX: Ensure search wrapper doesn't break layout */
 .search-wrapper {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* FIX: Make the header form region horizontal */
+.region-header-form {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  margin: 0 !important;
+}
+
+/* FIX: Make individual blocks in header form inline */
+.region-header-form .block {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+
+/* Additional spacing adjustments */
+.header-form-wrapper .block:first-child {
+  margin-right: 1rem !important;
+}
+
+/* Ensure social media links stay inline */
+.region-header-form .field--name-body {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* FIX: Ensure search form stays inline */
+#search-block-form {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  padding: 5px 5px !important;
+}
+
+.search-form {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+
+.search-form .form-group {
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* FIX: Social media links inline */
+.field--name-body a {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* FIX: Search input and button alignment */
+.form-search {
+  margin: 0 !important;
+  vertical-align: middle !important;
+  width: 150px;
+}
+
+.custom-search-button {
+  border: solid 1px rgb(202, 202, 202);
+  background-color: #ffffff;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  vertical-align: middle !important;
+}
+
+.form-control {
+  border-radius: 0px;
+}
+
+.form-row > fieldset {
+  padding-right: 0 !important;
+}
+.form-row > div {
+  padding-left: 0 !important;
+}
+
+/* FIX: Remove any row styling that might cause vertical stacking */
+.region-header-form.row {
+  display: flex !important;
+  flex-direction: row !important;
+  margin: 0 !important;
+}
+
+/* FIX: Container width consistency */
+@media (min-width: 1000px) {
+  .navbar.custom-main-nav > .container {
+    max-width: 1020px; /* Match your header width */
+  }
+  .custom-header {
+    margin-bottom: 150px;
+  }
 }
 
 /* ==== HERO SECTION ==== */
@@ -118,33 +309,30 @@ header #search-block-form {
 
 .views_slideshow_cycle_teaser_section img {
   width: 100%;
-  height: 100%;  /* Fill height of container */
-  object-fit: cover; /* Crop or fill nicely */
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
-
 
 .views_slideshow_cycle_slide {
   width: 100% !important;
   max-width: 1920px;
   overflow: hidden;
-  left: 0 !important; /* Reset left for layout unless animation needs */
+  left: 0 !important;
   position: absolute;
   top: 0;
 }
-
 
 .featured-top__inner {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-  overflow: hidden; /* prevent overflow */
+  overflow: hidden;
 }
 
 .section {
   text-align: start !important;
 }
-
 
 .hero-section img {
   width: 100%;
@@ -166,41 +354,6 @@ header #search-block-form {
   overflow: hidden;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  max-width: 800px;
-  padding: 3rem 2rem;
-  margin-top: 120px;
-}
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: 300;
-  letter-spacing: 3px;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-  line-height: 1.1;
-}
-
-.hero-subtitle {
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  letter-spacing: 1px;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  opacity: 0.9;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 /* ==== REGIONS ==== */
 
@@ -226,6 +379,12 @@ header #search-block-form {
   text-align: center;
 }
 
+/* Override for header form row */
+.region-header-form.row {
+  margin: 0 !important;
+  text-align: left !important;
+}
+
 /* ==== RESPONSIVE HERO ==== */
 
 @media (max-width: 768px) {
@@ -246,6 +405,17 @@ header #search-block-form {
   .hero-block {
     min-height: 80vh;
   }
+  
+  /* Mobile header adjustments */
+  .search-socials {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .region-header-form {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -264,3 +434,493 @@ header #search-block-form {
   }
 }
 
+
+.action-flag, .action-unflag {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+}
+.action-flag a, .action-unflag a, .action-unflag a:hover {
+  text-decoration: none;
+}
+
+
+.look-at-me {
+  width: 100px;
+  height: 30px;
+  font-weight: 700;
+  background-color: rgb(59, 58, 61);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  align-self: center;
+  margin: 10px;
+}
+.look-at-me:hover {
+  background-color: rgb(100, 100, 100);
+}
+.look-at-me a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding-left: 10px;
+  font-size: 13px !important;
+}
+.look-at-me a:hover {
+  color: white;
+}
+
+.read-more {
+  width: 100px;
+  height: 30px;
+  font-weight: 500;
+  background-color: rgb(102, 182, 228);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  align-self: center;
+  margin: 10px;
+}
+
+.read-more:hover {
+  background-color: rgb(35, 152, 187);
+}
+.read-more a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding-left: 18px;
+  font-size: 13px !important;
+}
+
+.read-more a:hover {
+  color: white;
+}
+
+.details {
+  width: 80px;
+  height: 30px;
+  font-weight: 700;
+  background-color: rgb(37, 40, 41);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  align-self: center;
+  margin: 10px;
+}
+.details a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding-left: 16px;
+  font-size: 13px !important;
+}
+.details a:hover {
+  color: white;
+}
+.details:hover {
+  background-color: rgb(104, 104, 104);
+}
+.project-block-class {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: repeating-linear-gradient(
+    135deg,
+    #eee,
+    #eee 5px,
+    #fff 5px,
+    #fff 10px
+  );
+  padding-top: 40px;
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+
+/* Keep inner content centered and constrained */
+.project-block-class > * {
+  max-width: 1220px;  /* Same as your container width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;  /* same horizontal padding as container */
+  padding-right: 20px;
+}
+
+
+/* Mobile toggler styles - stack items vertically when collapsed */
+@media (max-width: 991.98px) {
+  .custom-menu-container {
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  /* Fix: Add margin to push toggler away from branding */
+  .navbar-toggler {
+    margin-left: auto !important;
+    margin-right: 20px !important;
+  }
+  
+  /* Hide desktop menu items when toggler is active */
+  .custom-menu-container .home-icon,
+  .custom-menu-container .menu-wrapper,
+  .custom-menu-container .search-socials {
+    display: none !important;
+  }
+  
+  /* Hide collapsed content by default on mobile */
+  .navbar-collapse .container-custom {
+    display: none;
+  }
+  
+  /* Show collapsed content as vertical stack when expanded */
+  .navbar-collapse.show .container-custom,
+  .navbar-collapse.collapsing .container-custom {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* CENTER everything */
+    padding: 1rem 20px;
+    text-align: center !important;
+  }
+  
+  .navbar-collapse.show .home-icon,
+  .navbar-collapse.show .menu-wrapper,
+  .navbar-collapse.show .search-socials,
+  .navbar-collapse.collapsing .home-icon,
+  .navbar-collapse.collapsing .menu-wrapper,
+  .navbar-collapse.collapsing .search-socials {
+    margin: 0.5rem 0 !important;
+    width: 100%;
+    text-align: center !important;
+  }
+  
+  /* Fix: Make menu items display as vertical list - CENTERED */
+  .navbar-collapse.show .menu-wrapper ul,
+  .navbar-collapse.collapsing .menu-wrapper ul {
+    flex-direction: column !important;
+    align-items: center !important; /* CENTER menu items */
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    text-align: center !important;
+  }
+  
+  .navbar-collapse.show .menu-wrapper li,
+  .navbar-collapse.collapsing .menu-wrapper li {
+    width: auto !important; /* Don't force full width */
+    margin: 0.25rem 0;
+    text-align: center !important;
+  }
+  
+  .navbar-collapse.show .menu-wrapper a,
+  .navbar-collapse.collapsing .menu-wrapper a {
+    display: inline-block !important; /* Not full width block */
+    padding: 0.5rem 1rem;
+    text-align: center !important;
+  }
+  
+  /* Fix: CENTER social media and search */
+  .navbar-collapse.show .search-socials,
+  .navbar-collapse.collapsing .search-socials {
+    flex-direction: column !important;
+    align-items: center !important; /* CENTER social/search */
+    text-align: center !important;
+  }
+  
+  .navbar-collapse.show .social-wrapper,
+  .navbar-collapse.show .search-wrapper,
+  .navbar-collapse.collapsing .social-wrapper,
+  .navbar-collapse.collapsing .search-wrapper {
+    margin: 0.5rem 0 !important;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .nav-link {
+    font-size: 17px !important;
+  }
+  .menu-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 1115px) {
+  .navbar-collapse .container-custom {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  } 
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .home-icon {
+    margin: 0 !important;
+  }
+  .home-icon img {
+    padding: 0 !important;
+  }
+  .menu-wrapper {
+    min-width: auto !important;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+  .navbar-collapse .container-custom {
+    gap: 5px;
+  } 
+  
+  .menu-wrapper ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .menu-wrapper li {
+    margin: 0 0.25rem;
+  }
+  
+  .nav-link {
+    padding: 4px 6px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse .container-custom {
+    justify-content: space-between !important;
+  }
+  
+  .search-socials {
+    margin-left: auto !important;
+    flex-shrink: 0;
+  }
+  
+  /* Ensure menu wrapper doesn't push social/search off screen */
+  .menu-wrapper {
+    flex-grow: 0 !important;
+    margin-right: auto !important;
+  }
+}
+
+.project-block-class .views-view-responsive-grid__item {
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 220px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.project-block-class img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.app-development a {
+  color: red;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.app-development a:hover,
+.web-development a:hover,
+.php-development a:hover,
+.drupal a:hover {
+  color: rgb(88, 68, 68);
+}
+
+.web-development a {
+  color: rgb(73, 201, 158);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.php-development a {
+  color: purple;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.drupal a {
+  color: rgb(87, 169, 236);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.project-title {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.project-title a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.project-title a:hover {
+  color: rgb(104, 104, 104);
+}
+
+.service-title {
+  font-weight: 500;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.service-body {
+  font-size: 15px;
+  padding-bottom: 10px;
+  color: rgb(102, 102, 102);
+}
+
+.service-photo {
+  padding-bottom: 20px;
+}
+
+
+.team-title a {
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+.team-title a:hover {
+  color: rgb(90, 90, 90);
+}
+.team-photo {
+  padding-bottom: 20px;
+}
+.team-job a {
+  font-size: small;
+  color: rgb(102, 102, 102);
+  text-decoration: none;
+}
+
+.team-job a:hover {
+  color: rgb(56, 56, 56);
+}
+
+.social-flag {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-flag img {
+  margin-left: 3px;
+}
+
+.about-title {
+  margin-right: 5px;
+}
+
+@media (max-width: 985px) {
+    .about-block p {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+}
+.about-block {
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+.team-block {
+  padding-bottom: 90px;
+}
+
+.service-block {
+  padding-bottom: 50px;
+}
+
+
+.custom-news-item-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-areas:
+    "date meta"
+    "date photo"
+    "date title"
+    "date body";
+  gap: 10px 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.left-date {
+  grid-area: date;
+  font-weight: bold;
+}
+.meta {
+  grid-area: meta;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.read-more { 
+  margin-top: 10px; 
+}
+
+.news-date {
+  grid-area: date;
+}
+
+.news-meta {
+  grid-area: meta;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.news-photo {
+  grid-area: photo;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.news-title {
+  grid-area: title;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: start;
+}
+
+.news-body {
+  grid-area: body;
+  text-align: start;
+}
+
+.custom-date-block {
+  line-height: 20px;
+}
+.month {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.day {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(74, 149, 199);
+}
+
+.year {
+  font-size: 13px;
+  color: #ccc;
+}
