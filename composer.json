@@ -28,8 +28,12 @@
         "drupal/flag": "^4.0@dev",
         "drupal/like": "^3.0@dev",
         "drupal/masquerade": "^2.0",
+        "drupal/search_api": "^1.0@dev",
+        "drupal/slick": "^3.0@dev",
         "drupal/social_media_links": "^2.0@dev",
+        "drupal/splide": "^2.0@dev",
         "drupal/views_slideshow": "^5.0@dev",
+        "drupal/webform": "^6.0@dev",
         "drush/drush": "^13.6"
     },
     "conflict": {

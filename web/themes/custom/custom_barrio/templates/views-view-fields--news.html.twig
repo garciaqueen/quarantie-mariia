@@ -1,0 +1,22 @@
+{# views-view-fields--news.html.twig #}
+<div class="news-card">
+  <div class="news-date-section">
+    {{ fields.created.content }}
+  </div>
+  
+  <div class="news-content">
+    <div class="author-info">
+      {{ fields.field_photo.content }}
+      <div class="author-meta">
+        <span class="writer-line">
+          {{ fields.field_job.content }} {{ fields.field_author_name.content }} / {{ fields.field_category.content }}
+        </span>
+        <span class="time-ago">{{ fields.field_date_since.content }}</span>
+      </div>
+    </div>
+    
+    <h3 class="news-title">{{ fields.title.content }}</h3>
+    <div class="news-excerpt">{{ fields.body.content }}</div>
+    <div class="read-more-link">{{ fields.view_node.content }}</div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a views mini-pager.
+ *
+ * Available variables:
+ * - heading_id: Pagination heading ID.
+ * - pagination_heading_level: The heading level to use for the pager.
+ * - items: List of pager items.
+ *
+ * @see template_preprocess_views_mini_pager()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if items.previous or items.next %}
+  <nav role="navigation" aria-label="{{ 'Pagination'|t }}" class="mini-pager">
+    <ul class="mini-pager__list">
+      {% if items.previous %}
+        <li><a href="{{ items.previous.href }}">«</a></li>
+      {% endif %}
+
+      {# ДОДАНО: Відображення поточної сторінки #}
+      {% if items.current is defined %}
+        <li><span class="current-page">{{ items.current }}</span></li>
+      {% endif %}
+
+      {% if items.pages %}
+        {% for key, item in items.pages %}
+          <li>
+            {% if item.href %}
+              <a href="{{ item.href }}">{{ key }}</a>
+            {% else %}
+              <span class="active">{{ key }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      {% endif %}
+
+      {% if items.next %}
+        <li><a href="{{ items.next.href }}">»</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

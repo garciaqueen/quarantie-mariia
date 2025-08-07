@@ -14,12 +14,12 @@
   {{ children }}
   <style>
     #search-form-header-wrapper #edit-submit {
-      display: none;
+      display: none !important;
     }
   </style>
   <div class="form-actions">
     <button type="submit" class="custom-search-button">
-      <img src="{{ base_path }}sites/default/files/2025-07/mg-glass.png" alt="Search" width="30" height="34">
+      <img src="{{ file_url('public://2025-07/mg-glass.png') }}" alt="Search" width="30" height="34">
     </button>
   </div>
 </form>
